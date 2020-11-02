@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Local IP</title>
+</head>
+<body>
+    <h1>My local IP is</h1>
+    <p id="ip">Loading..</p>
+    <script src="ip.js"></script>
+    <script>
+    let p = document.getElementById('ip');
+    findLocalIp().then(
+        ips => {
+            let s = '';
+            ips.forEach( ip => s += ip + '<br>' );
+            p.innerHTML = s;
+        },
+        err => p.innerHTML = err
+    );
+    </script>
+</body>
+</html>
